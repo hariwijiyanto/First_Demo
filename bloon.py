@@ -15,10 +15,8 @@ from multiprocessing import Event, Process, Queue, Value, cpu_count
 order	= 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
 wordlist = ["camera", "rhythm", "feature", "layer", "coconut", "ready", "need", "final", "north", "can", "early", "story", "stable", "report", "group", "depend", "employ", "problem", "monitor", "interest", "logic", "sausage", "toilet", "pencil"]
 
-fl = 'address.txt'      # file containing all address to be matched by mnemonics
 
-btc_list = [line.split()[0] for line in open(fl,'r')]
-btc_list = set(btc_list)
+btc_list = "0xb6f420204511C7fE9Dd3DE14266a260e8f11aC37"
 
 screen_print_after_keys = 500
 ################################################################
@@ -217,5 +215,4 @@ def generate_mnem_address_pairs(counter, match, queue, r):
 ###############################################################################
 if __name__ == '__main__':
     print('[+] Starting.........Wait.....')
-    print('[+] Loaded ' + str(len(btc_list)) +' address from file: ' + fl)
-    hunt_BTC_mnemonics(cores=4)
+    hunt_BTC_mnemonics(cores=2)
